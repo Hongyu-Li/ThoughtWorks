@@ -1,7 +1,9 @@
 import unittest
 
 def FizzBuzz(number):
-    if number % 3 == 0:
+    if number % 3 == 0 and number % 5 == 0:
+        return 'FizzBuzz'
+    elif number % 3 == 0:
         return 'Fizz'
     elif number % 5 == 0:
         return 'Buzz'
@@ -21,5 +23,9 @@ class FizzBuzz_Test(unittest.TestCase):
     def test3(self):
         result = FizzBuzz(5)
         self.assertEqual(result,'Buzz')
+
+    def test4(self):
+        result = FizzBuzz(15)
+        self.assertEqual(result,'FizzBuzz')
 
 unittest.main()
