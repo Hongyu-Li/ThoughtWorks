@@ -1,0 +1,12 @@
+import unittest
+
+def FizzBuzz(number):
+    return str(number)
+
+## This is unittest part
+class FizzBuzz_Test(unittest.TestCase):
+    def test_1(self):
+        result = FizzBuzz(1)
+        self.assertEqual(result,'1')
+
+unittest.main()
