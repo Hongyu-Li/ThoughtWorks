@@ -14,4 +14,18 @@ describe('taxi fee', function() {
     var expect_result = 10;
     expect(expect_result).to.equal(result);
   });
+
+  it("returns round(6+(distance-2)*0.8) when distance is between 2 and 8", function() {
+    var result = taxi_fee(8);
+    var expect_result = 11;
+    expect(expect_result).to.equal(result);
+  });
+
+  it("returns round(6+(distance-2)*0.8) when distance is between 2 and 8", function() {
+    var result = taxi_fee(6);
+    var expect_result = 9;
+    expect(expect_result).to.equal(result);
+  });
+
+  
 });

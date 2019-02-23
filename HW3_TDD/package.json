@@ -9,6 +9,7 @@
   "author": "Hongyu Li",
   "license": "ISC",
   "dependencies": {
+    "Math": "0.0.1-security",
     "chai": "^4.2.0",
     "mocha": "^6.0.1"
   }
