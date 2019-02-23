@@ -22,7 +22,7 @@
 `npm test path/to/your/test.js` or `mocha path/to/your/test.js`
 
 ### Step 5: Iterate TDD process and finally submit code. (Git bach in your fileholder)
-`git init  
-git add . (or git add -A)  
-git commit -m 'commit_message'  
-git push origin`
+`git init`  
+`git add . (or git add -A)`  
+`git commit -m 'commit_message'`  
+`git push origin`
