@@ -3,7 +3,7 @@ var taxi_fee = require('../main/main.js');
 
 describe('taxi fee', function() {
 
-  it("returns 6 when distance is less than 2km", function() {
+  it("returns 6 when distance is shorter than 2km", function() {
     var result = taxi_fee(1.5);
     var expect_result = 6;
     expect(expect_result).to.equal(result);
@@ -27,5 +27,11 @@ describe('taxi fee', function() {
     expect(expect_result).to.equal(result);
   });
 
-  
+  it("returns round(10.8+(distance-8)*0.8*1.5) when distance is longer than 8", function() {
+    var result = taxi_fee(9);
+    var expect_result = 12;
+    expect(expect_result).to.equal(result);
+  });
+
+
 });
