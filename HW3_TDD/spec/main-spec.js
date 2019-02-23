@@ -44,4 +44,16 @@ describe('taxi fee', function() {
     var expect_result = 7;
     expect(expect_result).to.equal(result);
   });
+
+  it("returns round(0.25*waiting_time + net_taxi_fee)", function() {
+    var result = taxi_fee(6,5);
+    var expect_result = 10;
+    expect(expect_result).to.equal(result);
+  });
+
+  it("returns round(0.25*waiting_time + net_taxi_fee)", function() {
+    var result = taxi_fee(9,5);
+    var expect_result = 13;
+    expect(expect_result).to.equal(result);
+  });
 });
