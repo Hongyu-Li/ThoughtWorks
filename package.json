@@ -1,0 +1,20 @@
+{
+  "name": "ThoughtWorks_HWs",
+  "version": "1.0.0",
+  "description": "* Author: Hongyu Li hl3099@columbia.edu\r * Notes: This repo is used for ThoughtWorks practice.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvoreeL/ThoughtWorks_HWs.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IvoreeL/ThoughtWorks_HWs/issues"
+  },
+  "homepage": "https://github.com/IvoreeL/ThoughtWorks_HWs#readme"
+}
