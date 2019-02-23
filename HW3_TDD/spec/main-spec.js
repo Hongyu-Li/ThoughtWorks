@@ -33,5 +33,15 @@ describe('taxi fee', function() {
     expect(expect_result).to.equal(result);
   });
 
+  it("returns 0.25*waiting_time + net_taxi_fee", function() {
+    var result = taxi_fee(2,4);
+    var expect_result = 7;
+    expect(expect_result).to.equal(result);
+  });
 
+  it("returns round(0.25*waiting_time + net_taxi_fee)", function() {
+    var result = taxi_fee(2,5);
+    var expect_result = 7;
+    expect(expect_result).to.equal(result);
+  });
 });
