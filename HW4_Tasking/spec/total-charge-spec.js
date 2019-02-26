@@ -4,6 +4,7 @@ var loadPromotions = require('../src/promotions.js');
 var getChargeSheet = require('../src/charge-sheet.js');
 var getTotalCharge = require('../src/total-charge.js');
 var getBestCharge = require('../src/best-charge-info.js');
+var bestCharge = require('../src/best-charge.js');
 
 describe('calculate items charge', function() {
 
@@ -48,7 +49,8 @@ describe('calculate items charge', function() {
     var expect_result = {type: '指定菜品半价',
                          bestcharge: 25,
                          savecharge: 13,
-                         totalcharge: 38};
+                         totalcharge: 38,
+                         promitems: ['黄焖鸡','凉皮']};
     expect(expect_result).to.eql(BestChargeInfo);
   });
 
@@ -63,6 +65,25 @@ describe('calculate items charge', function() {
                          savecharge: 0,
                          totalcharge: 24};
     expect(expect_result).to.eql(BestChargeInfo);
+  });
+
+  it("returns formattable output", function() {
+    let OrderInfo = ["ITEM0001 x 1", "ITEM0013 x 2", "ITEM0022 x 1"];
+    var ItemsInfo = loadAllItems();
+    var PromInfo = loadPromotions();
+    var OutputSheet = bestCharge(OrderInfo,ItemsInfo,PromInfo);
+    var expect_result = `
+============= 订餐明细 =============
+黄焖鸡 x 1 = 18元
+肉夹馍 x 2 = 12元
+凉皮 x 1 = 8元
+-----------------------------------
+使用优惠:
+指定菜品半价(黄焖鸡，凉皮)，省13元
+-----------------------------------
+总计：25元
+===================================`.trim();
+    expect(expect_result).to.eql(OutputSheet);
   });
 
 });
