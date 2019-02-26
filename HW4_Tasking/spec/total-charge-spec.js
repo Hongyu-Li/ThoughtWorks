@@ -20,10 +20,9 @@ describe('calculate items charge', function() {
   it("returns best charge w promotion 2", function() {
     let OrderInfo = ["ITEM0013 x 4", "ITEM0022 x 1"];
     var ItemsInfo = loadAllItems();
-    var ItemsChargeSheet = getItemsCharge(OrderInfo, ItemsInfo);
-    var TotalCharge = getTotalCharge(ItemsChargeSheet);
+    var ChargeSheet = getChargeSheet(OrderInfo, ItemsInfo);
     var PromInfo = loadPromotions();
-    var BestChargeInfo = getBestCharge(TotalCharge,PromInfo);
+    var BestChargeInfo = getBestCharge(ChargeSheet,PromInfo);
     var expect_result = {type: '满30减6元',
                          bestcharge: 26,
                          savecharge: 6};

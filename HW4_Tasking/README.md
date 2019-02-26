@@ -41,31 +41,40 @@ loadPromotions():
                      items: [string]}]
 </pre>
 
-#### Task 2: Get charge sheet w/o promotions.
+#### Task 2: Get items charge sheet w/o promotions.
 <pre>
 getChargeSheet():
 - Input:
     OrderInfo: Array[string]
     ItemsInfo: loadAllItems()
 - Output:  
-    ChargeSheet: Array[ItemsCharge: {id:string, name: string, count: number,      
-                       itemprice:number}, TotalCharge: number]  
+    ChargeSheet: {id:string, name: string, count: number, itemprice:number}  
 </pre>
 
-#### Task 3: Get best charge by using promotions.
+#### Task 3: Calculate total charge based on items charge sheet.
+<pre>
+getTotalCharge():
+- Input:
+    ChargeSheet: getChargeSheet()
+- Output:  
+    TotalCharge: number  
+</pre>
+
+#### Task 4: Get best charge by using promotions.
 <pre>
 getBestCharge():
 - Input:  
-    ItemsChargeSheet: number  
+    ChargeSheet: getChargeSheet()  
     PromInfo: loadPromotions()
 - Output:  
     BestChargeInfo: {type: string,  
                      bestcharge: number,  
-                     savecharge: number}
+                     savecharge: number,
+                     totalcharge: number}
 </pre>
 
 
-#### Task 4: Print out a formattable result.
+#### Task 5: Print out a formattable result.
 <pre>
 bestCharge():
 - Input:  
@@ -74,6 +83,6 @@ bestCharge():
     PromInfo: Array[{type: string,  
                      items: [string]}]
 - Output:  
-    ItemsChargeSheet, TotalCharge: getTotalCharge(OrderInfo, ItemsInfo)  
-    BestChargeInfo: getBestCharge(TotalCharge,PromInfo)
+    ChargeSheet, getChargeSheet(OrderInfo, ItemsInfo)  
+    BestChargeInfo: getBestCharge(ChargeSheet,PromInfo)
 </pre>
