@@ -1,20 +1,29 @@
 var expect = require('chai').expect;
-var loadAllItems = require('../src/items.js')
-var loadPromotions = require('../src/promotions.js')
-var getChargeSheet = require('../src/charge-sheet.js')
-var getBestCharge = require('../src/best-charge-info.js')
+var loadAllItems = require('../src/items.js');
+var loadPromotions = require('../src/promotions.js');
+var getChargeSheet = require('../src/charge-sheet.js');
+var getTotalCharge = require('../src/total-charge.js');
+var getBestCharge = require('../src/best-charge-info.js');
 
 describe('calculate items charge', function() {
 
-  it("returns items charge w/o promotions", function() {
+  it("returns items charge sheet", function() {
     let OrderInfo = ["ITEM0001 x 1", "ITEM0013 x 2", "ITEM0022 x 1"];
     var ItemsInfo = loadAllItems();
     var ChargeSheet = getChargeSheet(OrderInfo, ItemsInfo);
-    var sheet_expect_result = {ItemsCharge: [{id: 'ITEM0001', name: '黄焖鸡', count: 1, itemprice: 18},
+    var sheet_expect_result = [{id: 'ITEM0001', name: '黄焖鸡', count: 1, itemprice: 18},
                                {id: 'ITEM0013', name: '肉夹馍', count: 2, itemprice: 12},
-                               {id: 'ITEM0022', name: '凉皮', count: 1, itemprice: 8}],
-                               TotalCharge: 38};
+                               {id: 'ITEM0022', name: '凉皮', count: 1, itemprice: 8}];
     expect(sheet_expect_result).to.eql(ChargeSheet);
+  });
+
+  it("returns total charge given a charge sheet w/o promotions", function() {
+    let OrderInfo = ["ITEM0001 x 1", "ITEM0013 x 2", "ITEM0022 x 1"];
+    var ItemsInfo = loadAllItems();
+    var ChargeSheet = getChargeSheet(OrderInfo, ItemsInfo);
+    var TotalCharge = getTotalCharge(ChargeSheet);
+    var expect_result = 38;
+    expect(expect_result).to.equal(TotalCharge);
   });
 
   it("returns best charge w promotion 2", function() {
@@ -25,22 +34,35 @@ describe('calculate items charge', function() {
     var BestChargeInfo = getBestCharge(ChargeSheet,PromInfo);
     var expect_result = {type: '满30减6元',
                          bestcharge: 26,
-                         savecharge: 6};
+                         savecharge: 6,
+                         totalcharge: 32};
     expect(expect_result).to.eql(BestChargeInfo);
   });
 
   it("returns best charge w promotion 1", function() {
     let OrderInfo = ["ITEM0001 x 1", "ITEM0013 x 2", "ITEM0022 x 1"];
     var ItemsInfo = loadAllItems();
-    var ItemsChargeSheet = getItemsCharge(OrderInfo, ItemsInfo);
-    var TotalCharge = getTotalCharge(ItemsChargeSheet);
+    var ChargeSheet = getChargeSheet(OrderInfo, ItemsInfo);
     var PromInfo = loadPromotions();
-    var BestChargeInfo = getBestCharge(TotalCharge,PromInfo);
+    var BestChargeInfo = getBestCharge(ChargeSheet,PromInfo);
     var expect_result = {type: '指定菜品半价',
                          bestcharge: 25,
-                         savecharge: 13};
+                         savecharge: 13,
+                         totalcharge: 38};
     expect(expect_result).to.eql(BestChargeInfo);
   });
-  //
+
+  it("returns best charge w/o promotions", function() {
+    let OrderInfo = ["ITEM0013 x 4"];
+    var ItemsInfo = loadAllItems();
+    var ChargeSheet = getChargeSheet(OrderInfo, ItemsInfo);
+    var PromInfo = loadPromotions();
+    var BestChargeInfo = getBestCharge(ChargeSheet,PromInfo);
+    var expect_result = {type: '无优惠',
+                         bestcharge: 24,
+                         savecharge: 0,
+                         totalcharge: 24};
+    expect(expect_result).to.eql(BestChargeInfo);
+  });
 
 });
