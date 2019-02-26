@@ -1,4 +1,4 @@
-// Task 1
+// Task 2
 function getItemsCharge(OrderInfo, ItemsInfo){
     var ItemsChargeSheet = []
     for (var i=0; i < OrderInfo.length; i++){
@@ -16,4 +16,4 @@ function getItemsCharge(OrderInfo, ItemsInfo){
     return ItemsChargeSheet;
 };
 
-module.exports = getItemsCharge; 
+module.exports = getItemsCharge;
