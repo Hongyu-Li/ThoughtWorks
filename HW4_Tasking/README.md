@@ -22,6 +22,7 @@ Output:
 ### Task Decomposition
 #### Task 1: Get information of all items(id, name and price) and promotions(type and items).
 <code>
+<pre>
 loadAllItems():
 - Input:  
     None
@@ -29,13 +30,19 @@ loadAllItems():
   ItemsInfo: Array[{id: string,  
                     name: string,  
                     price: number}]
+</pre>
 </code>
-* loadPromotions():
-> - Input:  
-      None
-> - Output:  
-      PromInfo: Array[{type: string,  
-                       items: [string]}]
+<br/>
+<code>
+<pre>
+loadPromotions():
+- Input:  
+    None
+- Output:  
+    PromInfo: Array[{type: string,  
+                     items: [string]}]
+</pre>
+</code>
 
 
 #### Task 2: Get total charge w/o promotions.
