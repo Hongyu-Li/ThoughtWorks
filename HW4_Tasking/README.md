@@ -21,6 +21,7 @@ Output:
 
 ### Task Decomposition
 #### Task 1: Get information of all items(id, name and price) and promotions(type and items).
+<code>
 * loadAllItems():
 > - Input:  
       None
@@ -28,7 +29,7 @@ Output:
       ItemsInfo: Array[{id: string,  
                         name: string,  
                         price: number}]
-
+</code>
 * loadPromotions():
 > - Input:  
       None
