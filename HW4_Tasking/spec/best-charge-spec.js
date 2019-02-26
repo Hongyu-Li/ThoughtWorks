@@ -67,7 +67,7 @@ describe('calculate items charge', function() {
     expect(expect_result).to.eql(BestChargeInfo);
   });
 
-  it("returns formattable output", function() {
+  it("returns formattable output w propmotion 1", function() {
     let OrderInfo = ["ITEM0001 x 1", "ITEM0013 x 2", "ITEM0022 x 1"];
     var ItemsInfo = loadAllItems();
     var PromInfo = loadPromotions();
@@ -82,6 +82,38 @@ describe('calculate items charge', function() {
 指定菜品半价(黄焖鸡，凉皮)，省13元
 -----------------------------------
 总计：25元
+===================================`.trim();
+    expect(expect_result).to.eql(OutputSheet);
+  });
+
+  it("returns formattable output w promotion 2", function() {
+    let OrderInfo = ["ITEM0013 x 4", "ITEM0022 x 1"];
+    var ItemsInfo = loadAllItems();
+    var PromInfo = loadPromotions();
+    var OutputSheet = bestCharge(OrderInfo,ItemsInfo,PromInfo);
+    var expect_result =  `
+============= 订餐明细 =============
+肉夹馍 x 4 = 24元
+凉皮 x 1 = 8元
+-----------------------------------
+使用优惠:
+满30减6元，省6元
+-----------------------------------
+总计：26元
+===================================`.trim();
+    expect(expect_result).to.eql(OutputSheet);
+  });
+
+  it("returns formattable output w/o promotions", function() {
+    let OrderInfo = ["ITEM0013 x 4"];
+    var ItemsInfo = loadAllItems();
+    var PromInfo = loadPromotions();
+    var OutputSheet = bestCharge(OrderInfo,ItemsInfo,PromInfo);
+    var expect_result =  `
+============= 订餐明细 =============
+肉夹馍 x 4 = 24元
+-----------------------------------
+总计：24元
 ===================================`.trim();
     expect(expect_result).to.eql(OutputSheet);
   });

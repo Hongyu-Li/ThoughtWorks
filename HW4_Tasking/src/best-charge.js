@@ -15,7 +15,7 @@ function bestCharge(OrderInfo,ItemsInfo,PromInfo){
   output += '-----------------------------------\n';
   if (BestChargeInfo['type']!='无优惠'){
     if (Object.keys(BestChargeInfo).length != 5){
-      output += '使用优惠:\n' + BestChargeInfo['type'] + ' ,' + '省' +
+      output += '使用优惠:\n' + BestChargeInfo['type'] + '，' + '省' +
                 BestChargeInfo['savecharge'] + '元\n';
     } else {
       prom_items_name = BestChargeInfo['promitems'].reduce(function(a,b){return a + '，' + b});
