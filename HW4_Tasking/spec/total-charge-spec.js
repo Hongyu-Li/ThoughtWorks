@@ -1,8 +1,7 @@
 var expect = require('chai').expect;
 var loadAllItems = require('../src/items.js')
 var loadPromotions = require('../src/promotions.js')
-var getItemsCharge = require('../src/items-charge.js')
-var getTotalCharge = require('../src/total-charge.js')
+var getChargeSheet = require('../src/charge-sheet.js')
 var getBestCharge = require('../src/best-charge-info.js')
 
 describe('calculate items charge', function() {
@@ -10,20 +9,12 @@ describe('calculate items charge', function() {
   it("returns items charge w/o promotions", function() {
     let OrderInfo = ["ITEM0001 x 1", "ITEM0013 x 2", "ITEM0022 x 1"];
     var ItemsInfo = loadAllItems();
-    var ItemsChargeSheet = getItemsCharge(OrderInfo, ItemsInfo);
-    var sheet_expect_result = [{id: 'ITEM0001', name: '黄焖鸡', count: 1, itemprice: 18},
+    var ChargeSheet = getChargeSheet(OrderInfo, ItemsInfo);
+    var sheet_expect_result = {ItemsCharge: [{id: 'ITEM0001', name: '黄焖鸡', count: 1, itemprice: 18},
                                {id: 'ITEM0013', name: '肉夹馍', count: 2, itemprice: 12},
-                               {id: 'ITEM0022', name: '凉皮', count: 1, itemprice: 8}];
-    expect(sheet_expect_result).to.eql(ItemsChargeSheet);
-  });
-
-  it("returns total charge w/o promotions", function() {
-    let OrderInfo = ["ITEM0001 x 1", "ITEM0013 x 2", "ITEM0022 x 1"];
-    var ItemsInfo = loadAllItems();
-    var ItemsChargeSheet = getItemsCharge(OrderInfo, ItemsInfo);
-    var TotalCharge = getTotalCharge(ItemsChargeSheet);
-    var expect_result = 38;
-    expect(expect_result).to.equal(TotalCharge);
+                               {id: 'ITEM0022', name: '凉皮', count: 1, itemprice: 8}],
+                               TotalCharge: 38};
+    expect(sheet_expect_result).to.eql(ChargeSheet);
   });
 
   it("returns best charge w promotion 2", function() {
@@ -51,5 +42,6 @@ describe('calculate items charge', function() {
                          savecharge: 13};
     expect(expect_result).to.eql(BestChargeInfo);
   });
+  //
 
 });

@@ -1,6 +1,7 @@
 // Task 2
-function getItemsCharge(OrderInfo, ItemsInfo){
-    var ItemsChargeSheet = []
+function getChargeSheet(OrderInfo, ItemsInfo){
+    var ItemsChargeSheet = [];
+    var TotalCharge = 0;
     for (var i=0; i < OrderInfo.length; i++){
       order = OrderInfo[i].split('x');
       id =  order[0].trim();
@@ -12,8 +13,9 @@ function getItemsCharge(OrderInfo, ItemsInfo){
                 count: count,
                 itemprice:  item_info['price']*count};
       ItemsChargeSheet.push(record);
+      TotalCharge += record['itemprice']
     };
-    return ItemsChargeSheet;
+    return {ItemsCharge: ItemsChargeSheet, TotalCharge: TotalCharge};
 };
 
-module.exports = getItemsCharge;
+module.exports = getChargeSheet;
