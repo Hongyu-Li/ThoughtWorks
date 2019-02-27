@@ -8,7 +8,7 @@ function getTotalCharge(ChargeSheet,PromInfo){
     if (PromInfo[0]['barcodes'].includes(ChargeSheet[i]['barcode'])){
       if (ChargeSheet[i]['count']>=3){
         nums_gift = parseInt(ChargeSheet[i]['count']/3);
-        promitems[ChargeSheet[i]['name']] = nums_gift;
+        promitems[ChargeSheet[i]['name']] = '' + nums_gift + ChargeSheet[i]['unit'];
         ChargeSheet[i]['itemprice'] -= ChargeSheet[i]['price']*nums_gift;
         savecharge += ChargeSheet[i]['price']*nums_gift;
       };
@@ -19,11 +19,11 @@ function getTotalCharge(ChargeSheet,PromInfo){
   if (savecharge!=0){
     return {type: PromInfo[0]['type'],
             promitems: promitems,
-            totalcharge: Number(parseFloat(totalcharge).toFixed(2)),
-            savecharge: Number(parseFloat(savecharge).toFixed(2))};
+            totalcharge: totalcharge,
+            savecharge: savecharge};
   } else {
     return {type: 'None',
-            totalcharge: Number(parseFloat(totalcharge).toFixed(2))};
+            totalcharge: totalcharge};
   };
 };
 
