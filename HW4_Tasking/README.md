@@ -83,6 +83,6 @@ bestCharge():
     PromInfo: Array[{type: string,  
                      items: [string]}]
 - Output:  
-    ChargeSheet, getChargeSheet(OrderInfo, ItemsInfo)  
+    ChargeSheet: getChargeSheet(OrderInfo, ItemsInfo)  
     BestChargeInfo: getBestCharge(ChargeSheet,PromInfo)
 </pre>
