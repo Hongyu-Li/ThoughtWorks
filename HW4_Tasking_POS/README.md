@@ -72,12 +72,10 @@ getTotalCharge():
     ChargeSheet: getChargeSheet()
     PromInfo: loadPromotions()
 - Output:  
-    TotalChargeInfo: Array[{type: string,
-                            name: string,
-                            count: number,
-                            unit: string,
-                            totalcharge: number,
-                            savecharge: number}]
+    TotalChargeInfo: {type: string,
+                      promitems: {name: count},
+                      totalcharge: number,
+                      savecharge: number}
 </pre>
 
 
