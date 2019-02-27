@@ -70,8 +70,6 @@ describe('Tests of Tasking Analysis', function() {
 
   it("returns formattable output w propmotion 1", function() {
     let OrderInfo = ["ITEM0001 x 1", "ITEM0013 x 2", "ITEM0022 x 1"];
-    //var ItemsInfo = loadAllItems();
-    //var PromInfo = loadPromotions();
     var OutputSheet = bestCharge(OrderInfo);
     var expect_result = `
 ============= 订餐明细 =============
@@ -89,8 +87,6 @@ describe('Tests of Tasking Analysis', function() {
 
   it("returns formattable output w promotion 2", function() {
     let OrderInfo = ["ITEM0013 x 4", "ITEM0022 x 1"];
-    //var ItemsInfo = loadAllItems();
-    //var PromInfo = loadPromotions();
     var OutputSheet = bestCharge(OrderInfo);
     var expect_result =  `
 ============= 订餐明细 =============
@@ -107,8 +103,6 @@ describe('Tests of Tasking Analysis', function() {
 
   it("returns formattable output w/o promotions", function() {
     let OrderInfo = ["ITEM0013 x 4"];
-    //var ItemsInfo = loadAllItems();
-    //var PromInfo = loadPromotions();
     var OutputSheet = bestCharge(OrderInfo);
     var expect_result =  `
 ============= 订餐明细 =============
