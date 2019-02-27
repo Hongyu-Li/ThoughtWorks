@@ -54,7 +54,8 @@ getChargeSheet():
 - Output:  
     ChargeSheet: Array[{barcode:string,
                         name: string,
-                        count: number
+                        price: number,
+                        count: number,
                         unit: string,
                         itemprice:number}]  
 </pre>
