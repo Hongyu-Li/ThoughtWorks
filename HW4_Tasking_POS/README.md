@@ -46,6 +46,9 @@ loadPromotions():
 
 
 #### Task 2: Get items charge sheet w/o promotions.
+* Task 2-1: get items count sheet.
+* Task 2-2: get charge sheet.
+
 <pre>
 getChargeSheet():
 - Input:
@@ -59,6 +62,7 @@ getChargeSheet():
                         unit: string,
                         itemprice:number}]  
 </pre>
+
 
 
 #### Task 3: Get total charge information based on items charge sheet w promitions.
