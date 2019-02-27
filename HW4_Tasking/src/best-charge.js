@@ -1,10 +1,14 @@
 // Task 5
 var getTotalCharge = require('./total-charge.js');
 var getChargeSheet= require('./charge-sheet.js');
+var loadAllItems = require('../src/items.js');
+var loadPromotions = require('../src/promotions.js');
 var getBestCharge = require('./best-charge-info.js');
 
-function bestCharge(OrderInfo,ItemsInfo,PromInfo){
+function bestCharge(OrderInfo){
   output = '============= 订餐明细 =============\n';
+  ItemsInfo = loadAllItems();
+  PromInfo = loadPromotions();
   ChargeSheet = getChargeSheet(OrderInfo,ItemsInfo);
   BestChargeInfo = getBestCharge(ChargeSheet,PromInfo);
 

@@ -1,12 +1,10 @@
+// Task Tests In Steps
 var expect = require('chai').expect;
 var loadAllItems = require('../src/items.js');
 var loadPromotions = require('../src/promotions.js');
-var getChargeSheet = require('../src/charge-sheet.js');
-var getTotalCharge = require('../src/total-charge.js');
-var getBestCharge = require('../src/best-charge-info.js');
 var bestCharge = require('../src/best-charge.js');
 
-describe('calculate items charge', function() {
+describe('Take out food: Main Tests', function() {
 
   it("returns items charge sheet", function() {
     let OrderInfo = ["ITEM0001 x 1", "ITEM0013 x 2", "ITEM0022 x 1"];
