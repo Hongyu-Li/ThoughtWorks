@@ -57,5 +57,4 @@ describe('POS: Main Tests', function() {
             '**********************';
     expect(expect_result).to.eql(InventorySheet);
   });
-
 });
