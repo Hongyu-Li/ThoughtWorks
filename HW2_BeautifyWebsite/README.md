@@ -2,4 +2,4 @@
 
 My implementation of the website is shown as below.
 
-![]('./assets/part1.jpg')
+![](https://github.com/IvoreeL/ThoughtWorks_HWs/blob/master/HW2_BeautifyWebsite/assets/optional.png)
