@@ -1,0 +1,220 @@
+/* CSS file for Learn-To-Be.html */
+@font-face{
+    font-family: 'Amatica SC';
+    src : url('./fonts/AmaticSC.ttf');
+}
+
+@font-face{
+    font-family: 'Open Sans';
+    src : url('./fonts/OpenSans-Regular.ttf');
+}
+
+
+body {margin: 10px 70px 70px 70px;
+      background-color: #80a8cc;
+      width: 1130px;}
+
+#nav_bar {background-color: #fcf9f4;
+          color: #d8d6d5;
+          font-size: 20px;
+          font-family: Garamond;
+          height: 80px;
+          width: 1130px;}
+
+.icon {float: left;
+       font-family: Verdana;
+       margin-right: 20px;
+       height: 50px;
+       width: 200px;
+       padding-top: 30px;
+       text-align: center;
+       border-right: 1px solid #eae7e2;}
+.icon > strong {font-family: Helvetica;
+                color: #4d4e59;}
+
+.nav_bar_main ul {list-style-type: none;
+                  padding: 0;
+                  margin: 0;}
+.nav_bar_main li {display: inline;
+                  float: left;
+                  padding-top: 30px;
+                  padding-right: 30px;}
+.nav_bar_main li:last-child {display: block;
+                             float: left;
+                             margin-left: -10px;
+                             height: 50px;
+                             padding-left: 55px;
+                             border-left: 1px solid #eae7e2;
+                             font-family: Helvetica;
+                             color: #4d4e59;}
+
+.nav_bar_main span {border: 1px solid #d1d7d2;
+                    padding: 5px 15px;
+                    border-radius: 4px;
+                    font-weight: bold;}
+
+#part1 {width: 1130px;
+        height: 500px;
+        background-image: url("./assets/part1.jpg");
+        background-size: cover;
+        float: left;}
+
+.inner_box {background-color: #AAA;
+            opacity: 0.5;
+            height: 100%;
+            width: 100%;}
+
+#part1 p {font-family: "Amatica SC";
+          font-size: 60px;
+          margin-top: 170px;
+          text-align: center;
+          color: #ffffff;
+          position: absolute;
+          top: 80px;
+          width: 1130px;}
+
+#part1 span {font-family: "Amatica SC";
+             color: #ffffff;
+             font-size: 35px;
+             text-align: center;
+             width: 1130px;
+             position: absolute;
+             top: 350px;}
+#part1 a {margin: 40px;
+          border-radius: 4px;
+          border: 1px solid #eae7e2;
+          padding: 2px 50px;}
+#part1 a:hover {background-color: #AAA;
+                opacity: 0.7;}
+
+.information {width: 1130px;
+              height: 450px;
+              background-color: #fcf9f4;
+              float: left;}
+.information h1 {font-family: "Amatica SC";
+                 font-size: 52px;
+                 font-weight: lighter;
+                 color:#4d4e59;
+                 text-align: center;
+                 margin-top: 100px;
+                 margin-bottom: 10px;}
+.information p {font-size: 25px;
+                font-family: "Open Sans";
+                text-align: center;
+                font-weight: lighter;
+                color: #636471;
+                margin: 0;
+                text-transform: capitalize;}
+
+button {width: 260px;
+        height: 50px;
+        font-family: "Open Sans";
+        font-size: 20px;
+        margin: 32px 440px;
+        background-color: #ffcd62;
+        color: #636471;
+        border: none;
+        border-radius: 4px;}
+
+
+#dot1 {height: 15px;
+       width: 15px;
+       background-color: #fcf9f4;
+       border-radius: 50%;
+       position: absolute;
+       top:1220px;
+       left:1100px;}
+#dot2 {height: 15px;
+       width: 15px;
+       background-color: rgba(0,0,0,0.1);
+       border-radius: 50%;
+       position: absolute;
+       top:1245px;
+       left:1100px;}
+#dot3 {height: 15px;
+       width: 15px;
+       background-color: rgba(0,0,0,0.1);
+       border-radius: 50%;
+       position: absolute;
+       top:1270px;
+       left:1100px;}
+
+.ads {background-color: #91d0b1;
+      width: 1130px;
+      height: 450px;
+      float: left;}
+img {opacity: 0.2;
+     background-color: #AAA;
+     height: 230px;
+     width: 230px;
+     border-radius:230px;
+     margin: 100px 260px;
+     float: left;}
+.ads span {position: absolute;
+           top: 1090px;
+           left: 650px;
+           display: block;
+           height: 500px;
+           width: 360px;}
+.ads p {font-family: Garamond;
+        font-size: 20px;
+        text-transform: none;
+        text-align: left;
+        color: #fcf9f4;
+        margin: 0;}
+.ads h1 {text-align: left;
+         margin-bottom: 20px;
+         color: #fcf9f4;
+         font-family: "Amatica SC";
+         font-size: 52px;
+         font-weight: lighter;}
+.ads button {margin: 20px 0;
+             background-color: rgba(0,0,0,0.1);
+             color: #fcf9f4;
+             width: 200px;}
+
+#part4 {background-color: #ffcd62;}
+#part4 img {float:right;
+            margin: 100px 200px;}
+#part4 span {position: absolute;
+             top: 1550px;
+             left: 350px;
+             display: block;}
+#part4 button {background-color: rgb(234,188,91);}
+
+
+#part5 {background-color: #80a8cc;}
+#part5 span {position: absolute;
+             top: 2000px;
+             left: 650px;
+             display: block;}
+#part5 button {background-color: #6d91b1;}
+
+
+#part6 h1 {margin-top: 60px;
+           margin-bottom: 20px;}
+.show_box {display: block;
+           float: left;
+           height: 180px;
+           width: 300px;
+           border: 1px solid #eae7e2;
+           text-align: center;
+           font-size: 20px;
+           padding-top: 50px;
+           margin: 0px 20px;
+           line-height: 80px;
+           font-family: cursive;}
+.show_box::first-line {font-size: 80px;}
+#box1 {margin-left: 75px;
+       color: #91d0b1;}
+#box2 {color: #ffcd62;}
+#box3 {color: #80a8cc;}
+
+
+.end {height:50px;
+      width: 1130px;
+      background-color: #4d4e59;
+      color: #d4d2d0;
+      float: left;
+      margin-bottom: 10px;
+      text-align: center;}
